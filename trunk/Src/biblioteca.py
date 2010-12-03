@@ -6,7 +6,7 @@ class Biblioteca:
         
     def adcLivro(self, novoLivro):
         valor = novoLivro.getCodigo
-        pickle.dump(novolivro, file('teste.pck','w'))
+        pickle.dump(novolivro, file('teste1.pck','w'))
         inserirNoFixUp(???ArvoreLivro, valor, )
         
         
@@ -15,14 +15,17 @@ class Biblioteca:
         
     def adcUsuario(self, novoUsuario):
         valor = novoUsuario.getCodigo
-        pickle.dump(novousuario, file('teste.pck','w'))
+        pickle.dump(novousuario, file('teste2.pck','w'))
         inserirNoFixUp...
 
     def delUsuario(self, usuario):
 
-    def buscaLivro(self,livro):
-        codLivro = livro.getCodigo)
-        busca(ArvoreLivro, codLivro)
+    def buscaLivro(self,codLivro):
+        livro = busca(ArvoreLivro, codLivro)
+        codLivro = livro.getCodigo()
+        P = pickle.load(file('teste1.pck','r'))
+        
+
         
     def reserva(self, livro):
         if livro.getDisponivel == False:
