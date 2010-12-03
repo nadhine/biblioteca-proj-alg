@@ -1,4 +1,5 @@
-import pickle
+import os
+
 class Biblioteca:
     def __init__(self):
         ArvoreUsuario = ArvoreUsuario(ArvoreRB)
@@ -6,7 +7,9 @@ class Biblioteca:
         
     def adcLivro(self, novoLivro):
         valor = novoLivro.getCodigo
-        pickle.dump(novolivro, file('teste1.pck','w'))
+        if not(os.path.exists('Livros.txt')):
+            m=open('Livros.txt','w') 
+            m.close()
         inserirNoFixUp(???ArvoreLivro, valor, )
         
         
@@ -15,7 +18,9 @@ class Biblioteca:
         
     def adcUsuario(self, novoUsuario):
         valor = novoUsuario.getCodigo
-        pickle.dump(novousuario, file('teste2.pck','w'))
+        if not(os.path.exists('Usuarios.txt')):
+            m=open('Usuarios.txt','w') 
+            m.close()
         inserirNoFixUp...
 
     def delUsuario(self, usuario):
