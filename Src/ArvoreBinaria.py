@@ -125,7 +125,7 @@ class Arvore:
 
         elif (Direito(No) != None):
             Lista = PosOrdem(Direito(No), Lista)
-        Lista.append(No)
+            Lista.append(No)
         else:
             return Lista;
 
@@ -198,7 +198,7 @@ class Arvore:
              if valorNo < no.getValor():
                  return busca(Esquerdo(no),valorNo)
              else:
-                return busca(Direito(no),valorNo)
+                 return busca(Direito(no),valorNo)
             
                 
 
