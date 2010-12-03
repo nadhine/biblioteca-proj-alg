@@ -22,16 +22,16 @@ class ArvoreRB(Arvore):
     def rotacaoEsq(self, x):
         y = Direito(x)
         Direito(x) = Esquerdo(y)
-        if Esquerdo(y) != self.getFolha:
-            y.getFilhoEsq.getPai = x
+        if Esquerdo(y) != self.getFolha():
+            y.getFilhoEsq().getPai() = x
         Pai(y) = Pai(x)
-        if Pai(x) == self.getFolha:
-            self.getRaiz = y
-        elif x == x.getPai.__filhoEsq: 
-            x.pai.__filhoEsq = y #x.irmao = y?
+        if Pai(x) == self.getFolha():
+            self.getRaiz() = y
+        elif x == x.getPai().getFilhoEsq(): 
+            x.getPai().getfilhoEsq() = y #x.irmao = y?
         else:
-            x.pai.__filhoDir = y #x.irmao = y?
-        y.__filhoEsq = x
+            x.getPai().getFilhoDir() = y #x.irmao = y?
+        Esquerdo(y) = x
         Pai(x) = y
 
 
