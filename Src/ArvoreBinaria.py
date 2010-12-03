@@ -191,13 +191,14 @@ class Arvore:
             DeletarNo(Sucessor(No));
             No.setValor() = aux.setValor()
                 
-     def busca(self, no):
-         if no.getValor == self.getRaiz.getValor:
+     def busca(self, no, valorNo):
+         if no.getValor()== None or valorNo == no.getValor():
              return no
          else:
-             if no.getValor < self.getRaiz.getValor:
-                 return busca(Esquerdo(self),no)
-                return busca(Direito(self),no)
+             if valorNo < no.getValor():
+                 return busca(Esquerdo(no),valorNo)
+             else:
+                return busca(Direito(no),valorNo)
             
                 
 
