@@ -1,7 +1,8 @@
 class Arvore:
     def __init__(self, raiz):
         self.__raiz = raiz;
-        self.__tamanho = 1
+        self.__tamanhore = 1
+        self.__folha = folha
 
     def getRaiz(self):
         return self.__raiz;
@@ -12,17 +13,18 @@ class Arvore:
         return self.__tamanho;
     def setTamanho(self, tamanho):
         self.__tamanho = tamanho;
+
+        
         
 
-
     def InserirNo(self, NoFilho, NoPai):
-        #Testa se o Valor do No a ser add [NoFilho] é maior que o do NoPai
+        #Testa se o Valor do No a ser add [NoFilho] Ã© maior que o do NoPai
         if (Info(NoFilho) > Info(NoPai)):
             
             #Testa se o NoPai possui filho Dir
-            if (Direito(NoPai) <> None):
+            if (Direito(NoPai) != None):
                 
-                #Chama a função recursivamente, mas o NoPai agora vai ser o
+                #Chama a funÃ§Ã£o recursivamente, mas o NoPai agora vai ser o
                 #FilhoDir do NoPai
                 InserirNo(NoFilho, Direito(NoPai));
 
@@ -35,9 +37,9 @@ class Arvore:
         else:
             
             #Testa se o NoPai possui filho Esq
-            if (Esquerdo(NoPai) <> None):
+            if (Esquerdo(NoPai) != None):
                 
-                #Chama a função recursivamente, mas o NoPai agora vai ser o
+                #Chama a funÃ§Ã£o recursivamente, mas o NoPai agora vai ser o
                 #FilhoEsq do NoPai
                 InserirNo(NoFilho, Esquerdo(NoPai));
 
@@ -85,10 +87,10 @@ class Arvore:
     def PreOrdem(self, No, Lista):
         
         Lista.append(No);
-        if (Esquerdo(No) <> None):
+        if (Esquerdo(No) != None):
             Lista = PreOrdem(Esquerdo(No), Lista);
-        if (Direito(No) <> None):
-            Lista = PreOrdem(Direito(No), Lista):
+        if (Direito(No) != None):
+            Lista = PreOrdem(Direito(No), Lista);
         else:
             return Lista;
 
@@ -101,11 +103,11 @@ class Arvore:
     def Ordem(self, No, Lista):
 
         
-        if (Esquerdo(No) <> None):
+        if (Esquerdo(No) != None):
             Lista = Ordem(Esquerdo(No), Lista);
         Lista.append(No);
-        if (Direito(No) <> None):
-            Lista = Ordem(Direito(No), Lista):
+        if (Direito(No) != None):
+            Lista = Ordem(Direito(No), Lista)
         else:
             return Lista;
 
@@ -118,12 +120,12 @@ class Arvore:
     def PosOrdem(self, No, Lista):
 
         
-        if (Esquerdo(No) <> None):
+        if (Esquerdo(No) != None):
             Lista = PosOrdem(Esquerdo(No), Lista);
 
-        if (Direito(No) <> None):
-            Lista = PosOrdem(Direito(No), Lista):
-        Lista.append(No);
+        elif (Direito(No) != None):
+            Lista = PosOrdem(Direito(No), Lista)
+        Lista.append(No)
         else:
             return Lista;
 
@@ -136,7 +138,7 @@ class Arvore:
     def Maximo(self):
         aux = getRaiz();
 
-        while (Direito(aux)<> None):
+        while (Direito(aux)!= None):
             aux = Direito(aux);
 
         return aux;
@@ -144,15 +146,15 @@ class Arvore:
     def Minimo(self):
         aux = getRaiz();
 
-        while (Esquerdo(aux)<> None):
+        while (Esquerdo(aux) != None):
             aux = Esquerdo(aux);
 
         return aux;
 
     def Sucessor(self, No):
-        if (Direito(No) <> None):
+        if (Direito(No) != None):
             aux = Direito(No);
-            while (Esquerdo(aux)<> None):
+            while (Esquerdo(aux) != None):
                 aux = Esquerdo(aux);
             return aux;
         else:
@@ -163,9 +165,9 @@ class Arvore:
 
         
     def Predecessor(self, No):
-        if (Esquerdo(No) <> None):
+        if (Esquerdo(No) != None):
             aux = Esquerdo(No);
-            while (Direito(aux)<> None):
+            while (Direito(aux)!= None):
                 aux = Direito(aux);
             return aux;
         else:
@@ -179,7 +181,7 @@ class Arvore:
         if (Direito(No)== None and Esquerdo(No) == None):
             No = None;
 
-        elif (Esquerdo(No)<> None and Direito(No) == None):
+        elif (Esquerdo(No) != None and Direito(No) == None):
             aux = Predecessor(No);
             DeletarNo(Predecessor(No));
             No.setValor() = aux.setValor();
@@ -189,4 +191,14 @@ class Arvore:
             DeletarNo(Sucessor(No));
             No.setValor() = aux.setValor()
                 
+     def busca(self, no):
+         if no.getValor == self.getRaiz.getValor:
+             return no
+         else:
+             if no.getValor < self.getRaiz.getValor:
+                 return busca(Esquerdo(self),no)
+                return busca(Direito(self),no)
             
+                
+
+       
